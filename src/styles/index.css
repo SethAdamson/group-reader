@@ -23,6 +23,21 @@ body {
 .App-intro {
   font-size: large; }
 
+.basic-category-box {
+  height: 160px;
+  width: 360px;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 16px auto; }
+
+.category-desc {
+  display: none;
+  color: red; }
+
 .header-outer {
   width: 100vw;
   height: 64px;
