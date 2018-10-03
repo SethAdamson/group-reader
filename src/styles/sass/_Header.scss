@@ -15,9 +15,12 @@
         display: flex;
         align-content: center;
 
-        h1{
+        a {
             margin: auto;
             cursor: pointer;
+            text-decoration: none;
+            color: $primary-light;
+            font-size: 200%;
         }
 
         h3 {
@@ -26,11 +29,7 @@
             cursor: pointer;
             display: flex;
             justify-content: space-between;
-
-            .bars{
-                position: relative;
-                top: -4px;
-            }
+            text-decoration: none;
         }
     }
 
