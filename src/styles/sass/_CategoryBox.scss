@@ -1,6 +1,6 @@
 .basic-category-box {
-    height: 320px;
-    width: 320px;
+    height: 160px;
+    width: 360px;
     border: 1px solid whitesmoke;
     border-radius: 5px;
     box-shadow: 4px 4px 8px lightgray;
@@ -8,4 +8,9 @@
     flex-direction: column;
     justify-content: center;
     margin: 16px auto;
+}
+
+.category-desc {
+    display: none;
+    color: red;
 }
