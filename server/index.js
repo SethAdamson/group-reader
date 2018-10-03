@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
 });
-
+ 
 app.use(session({
     secret: SESSION_SECRET,
     resave: false,
@@ -40,6 +40,7 @@ app.use(checkUserSession);
 
 //--------------Endpoints-------------//
 
+app.get('/api/getGroupsByCategory', ctrl.getGroupsByCategory)
 
 //--------------Listening-------------//
 
