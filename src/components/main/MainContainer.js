@@ -6,7 +6,7 @@ import Main from './Main';
 
 class MainContainer extends Component {
   componentDidMount() {
-    getAllByCategory();
+    this.props.getAllByCategory();
   }
 
   render() {
