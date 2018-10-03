@@ -4,7 +4,8 @@ body {
   font-family: sans-serif; }
 
 .App {
-  text-align: center; }
+  text-align: center;
+  font-family: "Kodchasan", sans-serif; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -21,3 +22,42 @@ body {
 
 .App-intro {
   font-size: large; }
+
+.header-outer {
+  width: 100vw;
+  height: 64px;
+  background-color: #1f5673;
+  color: #e0e0d9;
+  display: flex;
+  justify-content: space-between; }
+  .header-outer span {
+    width: 20%;
+    height: 80%;
+    margin: auto 16px;
+    display: flex;
+    align-content: center; }
+    .header-outer span a {
+      margin: auto;
+      cursor: pointer;
+      text-decoration: none;
+      color: #e0e0d9;
+      font-size: 200%; }
+    .header-outer span h3 {
+      width: 30%;
+      margin: auto 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none; }
+  .header-outer img {
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
+    border-radius: 5px;
+    cursor: pointer; }
+
+.header-profile {
+  justify-content: flex-end; }
+
+.header-menu {
+  justify-content: flex-start; }

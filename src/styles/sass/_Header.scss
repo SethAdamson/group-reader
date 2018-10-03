@@ -1,0 +1,51 @@
+@import './Global';
+
+.header-outer {
+    width: 100vw;
+    height: 64px;
+    background-color: $primary-blue;
+    color: $primary-light;
+    display: flex;
+    justify-content: space-between;
+    
+    span {
+        width:20%;
+        height: 80%;
+        margin: auto 16px;
+        display: flex;
+        align-content: center;
+
+        a {
+            margin: auto;
+            cursor: pointer;
+            text-decoration: none;
+            color: $primary-light;
+            font-size: 200%;
+        }
+
+        h3 {
+            width: 30%;
+            margin: auto 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        margin: auto 0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+.header-profile {
+    justify-content: flex-end;
+}
+
+.header-menu {
+    justify-content: flex-start;
+}
