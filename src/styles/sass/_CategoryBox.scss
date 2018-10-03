@@ -1,0 +1,11 @@
+.basic-category-box {
+    height: 320px;
+    width: 320px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 16px auto;
+}
