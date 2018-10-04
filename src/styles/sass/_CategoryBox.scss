@@ -1,16 +1,69 @@
+@import './Global';
+
 .basic-category-box {
     height: 160px;
     width: 360px;
     border: 1px solid whitesmoke;
     border-radius: 5px;
-    box-shadow: 4px 4px 8px lightgray;
+    box-shadow: 2px 2px 4px lightgray;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 16px auto;
+    color: $primary-green;
+    cursor: pointer;
 }
 
 .category-desc {
     display: none;
-    color: red;
+    color: $primary-blue;
+    animation-duration: .3s;
+    animation-name: desc-fade;
+    margin-top: 0;
+    padding: 0 8px;
+    height: 83px;
+}
+
+@keyframes desc-fade {
+    from {
+        height: 1px;
+        opacity: .2;
+    }
+
+    to {
+        height: 83px;
+        opacity: 1;
+    }
+}
+
+.list-of-groups-by-category {
+    height: 320px;
+    animation-duration: .3s;
+    animation-name: group-list-fade;
+    width: 360px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px lightgray;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 16px auto;
+    color: $primary-green;
+}
+
+@keyframes group-list-fade {
+    from {
+        height: 1px;
+        opacity: .2;
+    }
+
+    to {
+        height: 320px;
+        opacity: 1;
+    }
+}
+
+.lock-icon {
+    font-size: 24px;
+    color: $primary-blue;
 }
