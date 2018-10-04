@@ -102,7 +102,6 @@ passport.deserializeUser((id, done) => {
 app.get('/auth/login', passport.authenticate('auth0'));
 app.get(
   '/auth/callback',
-  e => console.log('Hi')
   passport.authenticate('auth0', {
     successRedirect: `${REACT_APP_FRONTEND_URL}#/`,
   })
