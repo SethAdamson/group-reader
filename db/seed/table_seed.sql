@@ -5,7 +5,9 @@ CREATE TABLE users (
     email VARCHAR(40),
     user_image TEXT,
     location TEXT,
-    bio TEXT
+    bio TEXT,
+    auth_id INT NOT NULL
+    username VARCHAR(255)
 );
 
 CREATE TABLE group_users (

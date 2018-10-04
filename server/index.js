@@ -15,7 +15,16 @@ const app = express();
 
 // --------------DotEnv----------//
 
-const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, DOMAIN, CLIENT_ID, CLIENT_SECRET, CALLBACK_URL } = process.env;
+const {
+  SERVER_PORT,
+  SESSION_SECRET,
+  CONNECTION_STRING,
+  DOMAIN,
+  CLIENT_ID,
+  CLIENT_SECRET,
+  CALLBACK_URL,
+  REACT_APP_FRONTEND_URL,
+} = process.env;
 
 // --------------Middleware-------------//
 
@@ -54,11 +63,11 @@ passport.use(
     },
     (accessToken, refreshToken, extraParams, profile, done) => {
       const db = app.get('db');
-      // console.log(profile);
-      const { picture, nickname } = profile;
-      const first = profile.name.givenName;
-      const last = profile.name.familyName;
-      const authID = profile.id;
+      console.log(profile);
+      const { picture, nickname, name, id } = profile;
+      const first = name.givenName;
+      const last = name.familyName;
+      const authID = id;
       const email = profile.emails[0].value;
 
       db.find_user([authID])
@@ -86,6 +95,30 @@ passport.deserializeUser((id, done) => {
       done(null, user[0]);
     })
     .catch(e => console.log(e));
+});
+
+// -----------Auth0 Endpoints-----------//
+
+app.get('/auth/login', passport.authenticate('auth0'));
+app.get(
+  '/auth/callback',
+  e => console.log('Hi')
+  passport.authenticate('auth0', {
+    successRedirect: `${REACT_APP_FRONTEND_URL}#/`,
+  })
+);
+app.get('/auth/logout', (req, res) => {
+  req.logout();
+  res.redirect(`https://on-target.auth0.com/v2/logout?returnTo=${encodeURIComponent(REACT_APP_FRONTEND_URL)}`);
+});
+app.get('/auth/user', (req, res) => {
+  if (req.user) {
+    res.status(200).send(req.user);
+  } else {
+    res.status(401).send('Un-authorized');
+    res.redirect(REACT_APP_FRONTEND_URL);
+    // res.redirect(`${REACT_APP_FRONTEND_URL}/#/`);
+  }
 });
 
 // --------------Endpoints-------------//

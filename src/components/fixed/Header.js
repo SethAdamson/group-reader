@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import defaultProfile from '../../media/defaultProfile.png';
 
@@ -10,6 +9,9 @@ export default function Header() {
         <h3>
           Menu
           <FontAwesomeIcon icon="bars" style={{ position: 'relative', top: '4px' }} />
+          <a className="login" href={process.env.REACT_APP_LOGIN}>
+            Login
+          </a>
         </h3>
       </span>
       <span className="header-title">
